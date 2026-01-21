@@ -31,7 +31,9 @@ function Footer() {
         <div className="footer-contact">
           <p>Connect with me:</p>
           <a
-            href="mailto:vipuldavis47@gmail.com"
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=vipuldavis47@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
             style={{
               textDecoration: "none",
               color: "inherit",
