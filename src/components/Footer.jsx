@@ -2,6 +2,7 @@ import "../styles/Footer.css";
 import { FaYoutube, FaInstagram, FaFacebookF } from "react-icons/fa";
 import { TbBrandVsco } from "react-icons/tb";
 import { FaXTwitter } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 import brandi from "../assets/images/brand_logo.png";
 
 function Footer() {
@@ -17,9 +18,9 @@ function Footer() {
         {/* LINKS */}
         <div className="footer-links">
           <div className="footer-col">
-            <a href="/">Home</a>
-            <a href="/portfolio">Portfolio</a>
-            <a href="/AboutMe">About Me</a>
+            <Link to="/">Home</Link>
+            <Link to="/portfolio">Portfolio</Link>
+            <Link to="/AboutMe">About Me</Link>
           </div>
         </div>
       </div>
