@@ -1,0 +1,307 @@
+/* ============================
+   GLOBAL SAFETY
+============================ */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* ============================
+   HOME HERO
+============================ */
+
+.home-hero {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* BACKGROUND VIDEO */
+
+.home-video {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  filter: blur(6px) brightness(0.55);
+  transform: scale(1.08);
+}
+
+/* DARK OVERLAY */
+
+.home-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    to right,
+    rgba(0,0,0,0.85),
+    rgba(0,0,0,0.6),
+    rgba(0,0,0,0.35)
+  );
+
+  z-index: 1;
+}
+
+/* MAIN CONTENT */
+
+.home-content {
+  position: absolute;
+  bottom: 20px;
+
+  left: 0;
+  right: 0;
+
+  z-index: 2;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  padding: 0 8%;
+}
+
+/* LEFT TEXT */
+
+.home-text {
+  max-width: 620px;
+  color: white;
+}
+
+.home-text h1 {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: 2px;
+}
+
+.home-text h1 span {
+  color: #e6c07b;
+}
+
+.home-text p {
+  margin-top: 18px;
+  font-size: 1.05rem;
+  opacity: 0.85;
+}
+
+/* NAME */
+
+.home-name {
+  margin-top: 28px;
+  font-size: 2.2rem;
+  letter-spacing: 4px;
+  color: #ffffff;
+}
+
+/* RIGHT IMAGE */
+
+.home-image-box {
+  position: relative;
+}
+
+.home-image-box img {
+  width: auto;
+  max-width: 280px;
+  height: 70vh;
+
+  object-fit: cover;
+  border-radius: 16px;
+
+  animation: floatImg 4s ease-in-out infinite;
+}
+
+/* ============================
+   ANIMATIONS
+============================ */
+
+@keyframes floatImg {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
+
+/* ============================
+   MY WORK SECTION
+============================ */
+
+.work-section {
+  padding: 100px 8%;
+  background: #050505;
+}
+
+.work-title {
+  text-align: center;
+  font-size: 3.2rem;
+  letter-spacing: 4px;
+  color: white;
+  margin-bottom: 60px;
+}
+
+/* GRID */
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+}
+
+/* CARD */
+
+.work-card {
+  position: relative;
+
+  height: 380px;
+  width: 100%;
+
+  border-radius: 22px;
+  overflow: hidden;
+
+  text-decoration: none;
+
+  box-shadow: 0 30px 60px rgba(0,0,0,0.7);
+
+  transition: all 0.45s ease;
+}
+
+/* IMAGE */
+
+.work-card img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  filter: brightness(0.6);
+
+  transition: 0.6s ease;
+}
+
+/* OVERLAY TEXT */
+
+.work-overlay {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.1),
+    rgba(0,0,0,0.75)
+  );
+}
+
+.work-overlay h3 {
+  font-size: 2.3rem;
+  font-weight: 800;
+
+  color: white;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+
+  text-shadow: 0 10px 30px rgba(0,0,0,0.9);
+
+  transition: 0.4s ease;
+}
+
+/* HOVER EFFECT */
+
+.work-card:hover {
+  transform: translateY(-12px) scale(1.03);
+}
+
+.work-card:hover img {
+  transform: scale(1.08);
+  filter: brightness(0.9);
+}
+
+.work-card:hover .work-overlay h3 {
+  letter-spacing: 5px;
+  color: #e11d48;
+}
+
+/* ============================
+   MOBILE RESPONSIVE
+============================ */
+
+@media (max-width: 900px) {
+
+  /* HERO */
+
+  .home-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+
+    padding: 0 6%;
+    bottom: 15px;
+  }
+
+  .home-text h1 {
+    font-size: 2.4rem;
+  }
+
+  .home-name {
+    font-size: 1.6rem;
+  }
+
+  .home-image-box img {
+    height: 45vh;
+    max-width: 220px;
+  }
+
+  /* WORK GRID */
+
+  .work-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .work-card {
+    height: 320px;
+  }
+
+  .work-title {
+    font-size: 2.2rem;
+  }
+
+  .work-overlay h3 {
+    font-size: 1.8rem;
+  }
+
+}
+
+/* ============================
+   EXTRA SMALL DEVICES
+============================ */
+
+@media (max-width: 480px) {
+
+  .home-text h1 {
+    font-size: 2rem;
+  }
+
+  .work-card {
+    height: 280px;
+  }
+
+  .work-overlay h3 {
+    font-size: 1.5rem;
+  }
+
+}

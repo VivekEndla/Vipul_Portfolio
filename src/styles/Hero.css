@@ -1,0 +1,320 @@
+/* ===========================
+   HERO SECTION
+=========================== */
+
+/* HERO CONTAINER */
+
+.hero {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* VIDEO BASE */
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0 encourages;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  transition:
+    transform 0.12s linear,
+    filter 0.12s linear,
+    opacity 0.12s linear;
+}
+
+
+/* FIXED HERO (ABOUT PAGE) */
+
+.hero-fixed {
+  position: fixed;
+}
+
+/* NORMAL HERO (PORTFOLIO PAGE) */
+
+.hero-normal {
+  position: absolute;
+}
+
+.hero {
+  z-index: 1;
+}
+
+
+
+/* ===========================
+   HERO CENTER TEXT
+=========================== */
+
+.hero-overlay-text {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  text-align: center;
+  color: white;
+
+  z-index: 2;
+}
+
+.hero-overlay-text h1 {
+  font-size: 3.5rem;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.hero-overlay-text p {
+  margin-top: 12px;
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+/* ===========================
+   AUDIO TOGGLE BUTTON
+=========================== */
+
+.audio-btn {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+
+  border: none;
+  padding: 10px 18px;
+
+  border-radius: 20px;
+  cursor: pointer;
+
+  font-size: 14px;
+
+  backdrop-filter: blur(6px);
+  transition: 0.3s ease;
+
+  z-index: 2;
+}
+
+.audio-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ===========================
+   ABOUT SCROLL TITLE SECTION
+=========================== */
+
+.about-scroll-title {
+  height: 40vh;
+
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  z-index: 2;
+
+  pointer-events: none;
+}
+
+.about-scroll-title h1 {
+  font-size: 5rem;
+  font-weight: 800;
+  letter-spacing: 4px;
+
+  color: white;
+  text-transform: uppercase;
+
+  opacity: 0.9;
+
+  animation: fadeUp 1s ease forwards;
+}
+
+/* ===========================
+   ABOUT SUBTEXT
+=========================== */
+
+.about-subtext {
+  max-width: 720px;
+  margin: 15px auto 0;
+
+  font-size: 1.05rem;
+  line-height: 1.6;
+
+  opacity: 0.8;
+  letter-spacing: 0.5px;
+
+  text-align: center;
+}
+
+/* ===========================
+   TEXT ANIMATION
+=========================== */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===========================
+   MOBILE RESPONSIVE
+=========================== */
+
+@media (max-width: 768px) {
+
+  .hero-overlay-text h1 {
+    font-size: 2.3rem;
+  }
+
+  .about-scroll-title h1 {
+    font-size: 3rem;
+  }
+
+  .about-subtext {
+    font-size: 0.95rem;
+    padding: 0 15px;
+  }
+
+  .audio-btn {
+    bottom: 20px;
+    right: 20px;
+    padding: 8px 14px;
+  }
+
+}
+/* ===========================
+   MOBILE VIDEO FIX
+=========================== */
+
+@media (max-width: 768px) {
+
+  .hero {
+    height: 100svh; /* better mobile viewport height */
+  }
+
+  .hero-video {
+    object-fit: contain;   /* SHOW FULL VIDEO */
+    object-position: center center;
+
+    background: black; /* fills empty space cleanly */
+    transform: scale(1) !important;
+  }
+
+}
+
+
+/* ===============================
+   GLOBAL OVERFLOW FIX (IMPORTANT)
+=============================== */
+
+html, body {
+  overflow-x: hidden;
+}
+
+.home-hero,
+.home-content,
+.home-cards,
+.work-grid {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+
+/* ===============================
+   MOBILE FIXES ONLY
+=============================== */
+
+
+@media (max-width: 900px) {
+
+  /* HERO SECTION */
+
+  .home-content {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+
+    padding: 0 16px;
+  }
+
+  .home-text {
+    max-width: 100%;
+  }
+
+  .home-text h1 {
+    font-size: 2.3rem;
+    line-height: 1.15;
+  }
+
+  .home-name {
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+  }
+
+  /* IMAGE */
+
+  .home-image-box img {
+    width: 200px;
+    max-width: 90%;
+    height: auto;
+  }
+
+  /* WORK SECTION */
+
+  .home-cards {
+    padding: 60px 16px;
+  }
+
+  .work-title {
+    font-size: 2rem;
+  }
+
+  .work-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .work-card img {
+    height: 260px;
+  }
+
+}
+
+
+/* ===============================
+   SMALL PHONE FIX
+=============================== */
+
+@media (max-width: 480px) {
+
+  .home-text h1 {
+    font-size: 1.9rem;
+  }
+
+  .home-name {
+    font-size: 1.4rem;
+  }
+
+  .work-card img {
+    height: 220px;
+  }
+
+}
+

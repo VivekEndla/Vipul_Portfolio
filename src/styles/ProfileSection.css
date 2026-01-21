@@ -1,0 +1,276 @@
+/* ===========================
+   PROFILE WRAPPER
+=========================== */
+
+.profile-push {
+  margin-top: 35vh;
+}
+
+.profile-wrapper {
+  padding: 80px 8%;
+  color: white;
+
+  position: relative;
+  z-index: 5;
+  pointer-events: auto;
+}
+
+
+/* ===========================
+   TOP FLEX SECTION
+=========================== */
+
+.profile-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  margin-bottom: 60px;
+}
+
+.profile-text h1 {
+  font-size: 4rem;
+  font-weight: 800;
+  color: #e04646;
+}
+
+.profile-text h3 {
+  font-weight: 400;
+  opacity: 0.85;
+  margin-top: 5px;
+}
+.profile-subtitle {
+  font-weight: 400;
+  opacity: 0.85;
+}
+
+/* ===========================
+   TAGS
+=========================== */
+
+.profile-tags {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.profile-tags span {
+  background: #e04646;
+  color: white;
+  padding: 6px 18px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+/* ===========================
+   PROFILE IMAGE
+=========================== */
+
+.profile-image img {
+  width: 260px;
+  border-radius: 14px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.5);
+}
+
+/* ===========================
+   INFO CARDS GRID
+=========================== */
+
+.profile-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+/* ===========================
+   CARD STYLE
+=========================== */
+
+.info-card {
+  background: rgba(20, 20, 20, 0.85);
+  backdrop-filter: blur(12px);
+
+  border-radius: 18px;
+  padding: 28px;
+
+  color: white;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+
+  will-change: transform;
+
+  position: relative;
+  overflow: hidden;
+
+  cursor: pointer;
+  .profile-wrapper {
+  padding: 80px 8%;
+  color: white;
+
+  transform: translateZ(0);
+
+  z-index: 5;
+  pointer-events: auto;
+}
+
+}
+
+/* ===========================
+   GLOW OVERLAY
+=========================== */
+
+.info-card::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.08),
+    transparent
+  );
+
+  opacity: 0;
+  transition: opacity 0.35s ease;
+
+  pointer-events: none;
+}
+
+.info-card:hover::before {
+  opacity: 1;
+}
+
+/* ===========================
+   CARD HOVER EFFECT
+=========================== */
+
+.info-card:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 30px 70px rgba(0,0,0,0.9);
+  background: #1f1f1f;    
+}
+
+/* ===========================
+   CARD TITLES + ICONS
+=========================== */
+
+.info-card h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: #e04646;
+  margin-bottom: 14px;
+  letter-spacing: 1px;
+}
+
+.info-card h3 svg {
+  font-size: 1.2rem;
+}
+
+/* ===========================
+   CARD LISTS
+=========================== */
+
+.info-card ul {
+  padding-left: 18px;
+}
+
+.info-card li {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+/* ===========================
+   EXPERIENCE TEXT
+=========================== */
+
+.info-card .exp-title {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.info-card .exp-year {
+  font-size: 13px;
+  opacity: 0.6;
+}
+
+/* ===========================
+   CONTACT BAR
+=========================== */
+
+.profile-contact {
+  margin-top: 60px;
+  padding-top: 18px;
+
+  border-top: 1px solid rgba(255,255,255,0.2);
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, auto));
+
+  justify-content: center;
+  gap: 30px;
+
+  text-align: center;
+}
+
+/* CONTACT LINKS */
+
+.profile-contact a {
+  color: white;
+  text-decoration: none;
+
+  font-size: 0.95rem;
+  letter-spacing: 0.6px;
+
+  opacity: 0.8;
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.profile-contact a:hover {
+  opacity: 1;
+  color: #e04646;
+  transform: translateY(-3px);
+}
+
+/* ===========================
+   MOBILE RESPONSIVE
+=========================== */
+
+@media (max-width: 900px) {
+
+  .profile-top {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-text h1 {
+    font-size: 2.6rem;
+  }
+
+  .profile-tags {
+    justify-content: center;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .profile-cards {
+    gap: 20px;
+  }
+
+  .profile-contact {
+    grid-template-columns: 1fr;
+  }
+
+}
